@@ -8,8 +8,10 @@ public class Bullet : MonoBehaviour
     [SerializeField] private int _damageAmount = 1;
 
     private Vector2 _fireDirection;
-
     private Rigidbody2D _rigidBody;
+    private Gun _gun;
+
+
 
     private void Awake()
     {
@@ -22,14 +24,16 @@ public class Bullet : MonoBehaviour
         _rigidBody.linearVelocity = _fireDirection * _moveSpeed;
     }
 
-    public void Init(Vector2 _BulletSpawnPos, Vector2 _MousePos)
+    public void Init(Gun gun, Vector2 _BulletSpawnPos, Vector2 _MousePos)
     {
+        _gun = gun;
+        transform.position = _BulletSpawnPos;
         _fireDirection = (_MousePos  - _BulletSpawnPos).normalized;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         Health health = other.gameObject.GetComponent<Health>();
         health?.TakeDamage(_damageAmount);
-        Destroy(this.gameObject);
+        _gun.ReleaseBulletFromPool(this);
     }
 }
