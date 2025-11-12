@@ -842,6 +842,7 @@ GameObject:
   - component: {fileID: 2011273888}
   - component: {fileID: 2011273897}
   - component: {fileID: 2011273898}
+  - component: {fileID: 2011273899}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7762,7 +7763,6 @@ MonoBehaviour:
   _groundlayer:
     serializedVersion: 2
     m_Bits: 8
-  _moveSpeed: 20
   _jumpStrength: 10
 --- !u!70 &2011273897
 CapsuleCollider2D:
@@ -7813,6 +7813,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961add08c7744b246ab7561ee96d9dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2011273899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817729410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85db7890976f09d41b9c99a977021ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 10
 --- !u!1 &2043640393
 GameObject:
   m_ObjectHideFlags: 0
