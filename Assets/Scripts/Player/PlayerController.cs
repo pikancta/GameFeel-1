@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,30 +10,33 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _feetTransform;
     [SerializeField] private Vector2 _groundCheck;
     [SerializeField] private LayerMask _groundlayer;
-    [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private float _jumpStrength = 7f;
 
-    private bool _isGrounded = false;
-    private Vector2 _movement;
+    private PlayerInput _playerInput;
+    private PlayerInput.FrameInput _frameInput;
 
+
+    private bool _isGrounded = false;
+    private Movement _movement;
     private Rigidbody2D _rigidBody;
 
     public void Awake() {
         if (Instance == null) { Instance = this; }
 
         _rigidBody = GetComponent<Rigidbody2D>();
+        _playerInput = GetComponent<PlayerInput>();
+        _movement = GetComponent<Movement>();
     }
 
     private void Update()
     {
+        Movement();
         GatherInput();
         Jump();
         HandleSpriteFlip();
     }
 
-    private void FixedUpdate() {
-        Move();
-    }
+   
 
     private bool CheckGrounded()
     {
@@ -47,17 +51,22 @@ public class PlayerController : MonoBehaviour
 
     private void GatherInput()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        _movement = new Vector2(moveX * _moveSpeed, _rigidBody.linearVelocity.y);
+        _frameInput = _playerInput.frameInput;
     }
 
-    private void Move() {
-
-        _rigidBody.linearVelocity = _movement;
+    private void Movement() 
+    {
+        _movement.SetCurrentDirection(_frameInput.Move.x);
     }
 
     private void Jump()
     {
+
+        if (!_frameInput.Jump)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && CheckGrounded()) {
             _rigidBody.AddForce(Vector2.up * _jumpStrength, ForceMode2D.Impulse);
         }
