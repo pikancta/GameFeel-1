@@ -843,9 +843,10 @@ GameObject:
   - component: {fileID: 2011273897}
   - component: {fileID: 2011273898}
   - component: {fileID: 2011273899}
+  - component: {fileID: 2011273900}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7759,11 +7760,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _feetTransform: {fileID: 1861990917}
-  _groundCheck: {x: 1.09, y: 0.07}
+  _groundCheck: {x: 1.31, y: 0.07}
   _groundlayer:
     serializedVersion: 2
     m_Bits: 8
   _jumpStrength: 10
+  _extraGravity: 700
+  _gravityDelay: 0.2
+  _coyoteTime: 0.5
 --- !u!70 &2011273897
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7825,7 +7829,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85db7890976f09d41b9c99a977021ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 10
+  _moveSpeed: 30
+--- !u!114 &2011273900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817729410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8af6193c1bb8c41a5267662daa350e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _knockbackTime: 0.2
 --- !u!1 &2043640393
 GameObject:
   m_ObjectHideFlags: 0
