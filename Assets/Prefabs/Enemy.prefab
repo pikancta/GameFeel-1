@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 3313540786046931640}
   - component: {fileID: 1990839317940298533}
   - component: {fileID: -6985889368194933980}
+  - component: {fileID: -3730910901997132002}
+  - component: {fileID: 4253149129167853709}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -179,6 +181,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee8af6193c1bb8c41a5267662daa350e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _knockbackTime: 0.2
+--- !u!114 &-3730910901997132002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500829499347730933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08231e89e8184744096b3368a4d23151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultMaterial: {fileID: 2100000, guid: 0161478cbd2280c479f73d8b961b9d8c, type: 2}
+  _whiteflashMaterial: {fileID: 2100000, guid: 5b06ab5acc0125243b4c2c047ee7ff8c, type: 2}
+  _flashTime: 0.1
+--- !u!114 &4253149129167853709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500829499347730933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabb80d88133f094cae054653d552ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5153281642299242202
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +286,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 98
   m_Sprite: {fileID: 1899769647, guid: 01b49b46e6384a6419be35fbdd9b5c1a, type: 3}
-  m_Color: {r: 1, g: 0.6392157, b: 0.6392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

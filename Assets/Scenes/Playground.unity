@@ -7829,7 +7829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85db7890976f09d41b9c99a977021ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 30
+  _moveSpeed: 20
 --- !u!114 &2011273900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7842,7 +7842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee8af6193c1bb8c41a5267662daa350e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _knockbackTime: 0.2
+  _knockbackTime: 5
 --- !u!1 &2043640393
 GameObject:
   m_ObjectHideFlags: 0
